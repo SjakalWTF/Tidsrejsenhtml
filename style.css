@@ -1,241 +1,219 @@
-/* 
-##########################################################
-#             Lavet af Nicolai - TidsRejsen 2017/2025    #
-##########################################################
-*/
+<!DOCTYPE html>
+<html class="no-js" lang="da" oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;">
+<head>
+  <meta charset="utf-8">
+  <title>Hjem | TidsRejsen</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to bottom right, #1c1c1c, #2c2c2c);
+      color: #fff;
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-body {
-    font-family: 'Roboto', sans-serif;
-    background-image: url('./background.jpg');
-    background-position: center;
-    background-size: cover;
-    background-attachment: fixed;
-    min-height: 100vh;
-    margin: 0;
-    padding: 0;
-    color: #f2f2f2;
-}
+    /* Navbar styling */
+    .navbar {
+      background-color: #111;
+      border: none;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
 
-/* Navbar */
-.navbar-default {
-    background-color: #fff;
-    margin-bottom: 0 !important;
-    border-radius: 0;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.navbar-nav > li > a {
-    text-transform: lowercase;
-    color: #858585 !important;
-    margin-right: 8px;
-    font-weight: 300;
-    transition: color 0.25s ease;
-}
-
-.navbar-nav > li > a:hover {
-    color: #444 !important;
-}
-
-.navbar-brand {
-    text-transform: uppercase;
-    color: #444 !important;
-    font-weight: 500;
-    position: relative;
-}
-
-/* Content */
-#content {
-    text-align: center;
-    width: 100%;
-    padding: 100px 15px;
-}
-
-#content img {
-    max-width: 470px;
-    width: 100%;
-    height: auto;
-    filter: drop-shadow(0 0 40px rgba(55, 172, 177, 0.8));
-    transition: transform 0.3s ease;
-    cursor: pointer;
-}
-
-#content img:hover {
-    transform: scale(1.03);
-}
-
-.intro-text {
-    padding: 10px;
-}
-
-.intro-text h3 {
-    font-weight: 300;
-    font-size: 18px;
-    opacity: 0.9;
-}
-
-.intro-text p {
-    font-size: 20px;
-    font-weight: bold;
-    background: rgba(0, 0, 0, 0.4);
-    padding: 10px 16px;
-    border-radius: 6px;
-    display: inline-block;
-    margin-top: 25px;
-    text-transform: lowercase;
-    letter-spacing: 0.25px;
-}
-
-/* Buttons */
-#store-button {
-    background-color: #f6a110;
-    color: white;
-    padding: 8px 14px;
-    border: none;
-    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    text-transform: lowercase;
-    min-width: 72px;
-}
-
-#store-button:hover {
-    background-color: #39edda;
-    transform: scale(1.03);
-}
-
-#store-button:active {
-    background-color: #3393d4;
-    color: #fff;
-}
-
-/* Footer */
-.footer, .navbar-fixed-bottom {
-    background: rgba(0, 0, 0, 0.5);
-    min-height: 70px;
-}
-
-.navbar-fixed-bottom .navbar-text {
-    color: white;
-    font-weight: 300;
-    opacity: 0.25;
-    margin-top: 30px;
-    text-align: center;
-}
-
-/* Popup */
-#popup {
-    display: none;
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 6px;
-    z-index: 9999;
-    font-size: 16px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.25);
-}
-
-/* Buttons general */
-.btn {
-    text-shadow: 0 1px 1px rgba(0,0,0,0.25);
-    text-transform: lowercase;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    border: none;
-}
-
-.btn:hover {
-    transform: scale(1.02);
-}
-
-.btn-danger {
-    background-color: #e74c3c;
-    color: white;
-}
-
-.btn-primary {
-    background-color: #3498db;
-    color: white;
-}
-
-.btn-primary:hover {
-    background-color: #39a5ed;
-}
-
-.btn-primary:active, .btn-primary:focus {
-    background-color: #3393d4 !important;
-    color: whitesmoke;
-}
-
-/* Responsiveness */
-@media (max-width: 767px) {
     .navbar-brand {
-        position: absolute;
-        width: 100%;
-        left: 0;
-        text-align: center;
+      color: #fff !important;
+      font-weight: bold;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    .navbar-nav > li > a {
+      color: #ccc !important;
+      font-weight: 400;
+    }
+
+    .navbar-nav > li > a:hover {
+      color: #fff !important;
     }
 
     .navbar-toggle {
-        z-index: 3;
-        margin-right: 15px;
+      border-color: #444;
     }
 
-    #content {
-        padding-top: 80px;
+    .navbar-toggle .icon-bar {
+      background-color: #fff;
     }
 
-    #content img {
-        max-width: 90%;
+    .navbar-btn .btn {
+      background-color: #222;
+      border: 1px solid #444;
+      color: #fff;
+      transition: background 0.3s;
+    }
+
+    .navbar-btn .btn:hover {
+      background-color: #333;
+    }
+
+    /* Logo styling */
+    #content img.center-block {
+      margin-top: 30px;
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Intro text */
+    .intro-text {
+      margin-top: 40px;
+      text-align: center;
     }
 
     .intro-text h3 {
-        font-size: 16px;
+      font-weight: 300;
+      font-size: 20px;
+      margin-bottom: 10px;
+      opacity: 0.85;
     }
 
     .intro-text p {
-        font-size: 18px;
-        padding: 8px;
+      font-size: 22px;
+      font-weight: bold;
+      color: #eee;
     }
 
-    .navbar-fixed-bottom .navbar-text {
-        margin: 15px 0;
+    /* Popup */
+    #popup {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #111;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 6px;
+      z-index: 9999;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+      font-size: 15px;
     }
-}
 
-@media (min-width: 768px) and (max-width: 991px) {
-    #content img {
-        max-width: 400px;
+    /* Footer */
+    footer.footer {
+      background-color: #111;
+      border-top: 1px solid #333;
+      color: #888;
+      font-size: 14px;
+      padding: 10px 0;
+      text-align: center;
     }
-}
 
-@media (min-width: 992px) {
-    .navbar-brand {
-        position: absolute;
-        width: 100%;
-        left: 0;
+    /* Responsivitet - Mobilversion */
+    @media screen and (max-width: 768px) {
+      /* Navbar brand size */
+      .navbar-brand {
+        font-size: 20px;
+      }
+
+      /* Navbar links */
+      .navbar-nav {
         text-align: center;
-    }
-}
+      }
 
-/* Mobilvisning – centreret og fastgjort */
-@media (max-width: 991px) {
-    html, body {
-        height: 100vh;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
+      .navbar-nav > li {
+        margin: 10px 0;
+      }
 
-    #content {
-        padding: 0 15px;
-    }
+      .intro-text h3 {
+        font-size: 18px;
+      }
 
-    .navbar, .footer, .navbar-fixed-bottom {
-        display: none;
+      .intro-text p {
+        font-size: 20px;
+      }
+
+      /* Responsive logo */
+      #content img.center-block {
+        max-width: 250px;
+      }
     }
-}
+  </style>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand img-responsive" onclick="copyIP()" title="Klik for at kopiere IP"><strong>Tids</strong>Rejsen</span>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="nav navbar-nav">
+          <li>
+            <p class="navbar-btn">
+              <a href="https://423132moiglrxp6yvbdka6.buycraft.net/?action=preview&signature=1a72932678b0aa969066571a48684b0d998bd7a3491faa6084e24310e479fea8&expires=1745112178"
+                 id="store-button" class="btn btn-default">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Butik
+              </a>
+            </p>
+          </li>
+          <li><a href="#"><i class="fa fa-map-pin" aria-hidden="true"></i>&nbsp;Destinationer</a></li>
+          <li><a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;Om os</a></li>
+          <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;Kontakt os</a></li>
+          <li><a href="#"><i class="fa fa-wikipedia-w" aria-hidden="true"></i>&nbsp;</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO / INDHOLD -->
+  <div id="content">
+    <img src="logo.jpg" alt="TidsRejsen logo" class="center-block img-responsive" />
+
+    <div class="intro-text">
+      <h3>Dansk Minecraft-server under udvikling</h3>
+      <p><strong>Udforsk og rejs igennem tid og sted!</strong></p>
+    </div>
+  </div>
+
+  <!-- POPUP -->
+  <div id="popup">Server IP kopieret!</div>
+
+  <!-- FOOTER -->
+  <footer class="footer navbar-default navbar-fixed-bottom">
+    <p>Copyright © <strong>TidsRejsen 2016/2025</strong></p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    function copyIP() {
+      const ip = "mc.tidsrejsen.net";
+      const tempInput = document.createElement("input");
+      document.body.appendChild(tempInput);
+      tempInput.value = ip;
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+
+      const popup = document.getElementById("popup");
+      popup.style.display = "block";
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 2000);
+    }
+  </script>
+</body>
+</html>}
