@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-image: url('./background.jpg');
+    background-image: url('../background.jpg');
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -217,25 +217,5 @@ body {
         width: 100%;
         left: 0;
         text-align: center;
-    }
-}
-
-/* Mobilvisning – centreret og fastgjort */
-@media (max-width: 991px) {
-    html, body {
-        height: 100vh;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #content {
-        padding: 0 15px;
-    }
-
-    .navbar, .footer, .navbar-fixed-bottom {
-        display: none;
     }
 }
