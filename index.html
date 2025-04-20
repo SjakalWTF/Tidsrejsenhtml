@@ -1,0 +1,139 @@
+<!-- 
+##########################################################
+#             Lavet af Nicolai - TidsRejsen 2017/2025   #
+##########################################################
+-->
+
+<!DOCTYPE html>
+<html class="no-js" lang="da" oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;">
+<head>
+  <meta charset="utf-8">
+  <title>Hjem | TidsRejsen</title>
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.png" />
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <style>
+    .intro-text {
+      color: #f2f2f2;
+      margin-top: 20px;
+    }
+
+    .intro-text h3 {
+      font-weight: 300;
+      font-size: 18px;
+      margin-bottom: 10px;
+      opacity: 0.9;
+    }
+
+    .intro-text p {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    #popup {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #222;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      z-index: 9999;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      font-size: 14px;
+    }
+
+    .navbar-brand {
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <span class="navbar-brand img-responsive" onclick="copyIP()" title="Klik for at kopiere IP"><strong>Tids</strong>Rejsen</span>
+      </div>
+      <div class="collapse navbar-collapse" id="navbar">
+        <ul class="nav navbar-nav">
+          <li>
+            <p class="navbar-btn">
+              <a href="#"
+                 id="store-button" class="btn btn-default">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Butik
+              </a>
+            </p>
+          </li>
+          <li><a href="#"><i class="fa fa-map-pin" aria-hidden="true"></i>&nbsp;Destinationer</a></li>
+          <li><a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;Om os</a></li>
+          <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;Kontakt os</a></li>
+          <li><a href="#"><i class="fa fa-wikipedia-w" aria-hidden="true"></i>&nbsp;</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO / INDHOLD -->
+  <div id="content">
+    <img src="logo.png" alt="TidsRejsen logo" class="img-responsive center-block" />
+
+    <div class="intro-text text-center">
+      <h3>Dansk Minecraft-server under udvikling</h3>
+      <p><strong>Udforsk og rejs igennem tid og sted!</strong></p>
+    </div>
+  </div>
+
+  <!-- POPUP -->
+  <div id="popup">Du har trykket på knappen!</div>
+
+  <!-- FOOTER -->
+  <footer class="footer navbar-default navbar-fixed-bottom" style="margin-top: 500px;">
+    <div class="container">
+      <p class="navbar-text pull-left">
+        Copyright © <strong>TidsRejsen 2016/2025</strong>
+      </p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+    function copyIP() {
+      const ip = "mc.tidsrejsen.net";
+      const tempInput = document.createElement("input");
+      document.body.appendChild(tempInput);
+      tempInput.value = ip;
+      tempInput.select();
+      document.execCommand("copy");
+      document.body.removeChild(tempInput);
+
+      const popup = document.getElementById("popup");
+      popup.innerText = "Server IP kopieret!";
+      popup.style.display = "block";
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 2000);
+    }
+
+    $("#store-button").on("click", function () {
+      $("#popup").text("Du har trykket på knappen!").fadeIn(300).delay(1800).fadeOut(400);
+    });
+  </script>
+</body>
+</html>
