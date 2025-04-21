@@ -115,7 +115,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
           integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
           crossorigin="anonymous"></script>
-  <script>
+    <script>
     function copyIP() {
       const ip = "mc.tidsrejsen.net";
       const tempInput = document.createElement("input");
@@ -131,6 +131,22 @@
         popup.style.display = "none";
       }, 2000);
     }
+
+    // Aktiveret: Autoscale og centrering
+    document.documentElement.style.height = '100%';
+    document.body.style.height = '100%';
+    document.documentElement.style.overflow = 'hidden';
+    document.body.style.overflow = 'hidden';
+
+    function scaleContent() {
+      const content = document.getElementById('content');
+      const scale = Math.min(window.innerWidth / 800, window.innerHeight / 600);
+      content.style.transform = 'scale(' + scale + ')';
+      content.style.transformOrigin = 'center center';
+    }
+
+    window.addEventListener('resize', scaleContent);
+    window.addEventListener('load', scaleContent);
   </script>
 </body>
 </html>
