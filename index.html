@@ -3,6 +3,7 @@
 #             Lavet af Nicolai - TidsRejsen 2017/2025   #
 ##########################################################
 -->
+
 <!DOCTYPE html>
 <html class="no-js" lang="da" oncontextmenu="return false" onkeydown="return false;" onmousedown="return false;">
 <head>
@@ -15,7 +16,46 @@
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
         crossorigin="anonymous">
   <link href="style.css" rel="stylesheet" type="text/css">
+  <style>
+    .intro-text {
+      color: #f2f2f2;
+      margin-top: 20px;
+    }
+
+    .intro-text h3 {
+      font-weight: 300;
+      font-size: 18px;
+      margin-bottom: 10px;
+      opacity: 0.9;
+    }
+
+    .intro-text p {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ffffff;
+    }
+
+    #popup {
+      display: none;
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: #222;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      z-index: 9999;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      font-size: 14px;
+    }
+
+    .navbar-brand {
+      cursor: pointer;
+    }
+  </style>
 </head>
+
 <body>
   <!-- NAVBAR -->
   <nav class="navbar navbar-default navbar-static-top">
@@ -31,10 +71,18 @@
       </div>
       <div class="collapse navbar-collapse" id="navbar">
         <ul class="nav navbar-nav">
-          <li><a href="#" id="store-button" class="btn btn-default"><i class="fa fa-shopping-cart"></i>&nbsp;Butik</a></li>
-          <li><a href="#"><i class="fa fa-map-pin"></i>&nbsp;Destinationer</a></li>
-          <li><a href="#"><i class="fa fa-question-circle"></i>&nbsp;Om os</a></li>
-          <li><a href="#"><i class="fa fa-envelope"></i>&nbsp;Kontakt os</a></li>
+          <li>
+            <p class="navbar-btn">
+              <a href="https://423132moiglrxp6yvbdka6.buycraft.net/?action=preview&signature=1a72932678b0aa969066571a48684b0d998bd7a3491faa6084e24310e479fea8&expires=1745112178"
+                 id="store-button" class="btn btn-default">
+                <i class="fa fa-shopping-cart" aria-hidden="true"></i>&nbsp;Butik
+              </a>
+            </p>
+          </li>
+          <li><a href="#"><i class="fa fa-map-pin" aria-hidden="true"></i>&nbsp;Destinationer</a></li>
+          <li><a href="#"><i class="fa fa-question-circle" aria-hidden="true"></i>&nbsp;Om os</a></li>
+          <li><a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>&nbsp;Kontakt os</a></li>
+          <li><a href="#"><i class="fa fa-wikipedia-w" aria-hidden="true"></i>&nbsp;</a></li>
         </ul>
       </div>
     </div>
@@ -43,6 +91,7 @@
   <!-- HERO / INDHOLD -->
   <div id="content">
     <img src="logo.png" alt="TidsRejsen logo" class="img-responsive center-block" />
+
     <div class="intro-text text-center">
       <h3>Dansk Minecraft-server under udvikling</h3>
       <p><strong>Udforsk og rejs igennem tid og sted!</strong></p>
@@ -50,18 +99,22 @@
   </div>
 
   <!-- POPUP -->
-  <div id="popup">Du har trykket på knappen!</div>
+  <div id="popup">Server IP kopieret!</div>
 
   <!-- FOOTER -->
-  <footer class="footer navbar-default navbar-fixed-bottom">
+  <footer class="footer navbar-default navbar-fixed-bottom" style="margin-top: 500px;">
     <div class="container">
-      <p class="navbar-text pull-left">Copyright © <strong>TidsRejsen 2016/2025</strong></p>
+      <p class="navbar-text pull-left">
+        Copyright © <strong>TidsRejsen 2016/2025</strong>
+      </p>
     </div>
   </footer>
 
   <!-- SCRIPTS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+          integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+          crossorigin="anonymous"></script>
   <script>
     function copyIP() {
       const ip = "mc.tidsrejsen.net";
@@ -71,30 +124,13 @@
       tempInput.select();
       document.execCommand("copy");
       document.body.removeChild(tempInput);
+
       const popup = document.getElementById("popup");
-      popup.innerText = "Server IP kopieret!";
       popup.style.display = "block";
-      setTimeout(() => popup.style.display = "none", 2000);
+      setTimeout(() => {
+        popup.style.display = "none";
+      }, 2000);
     }
-
-    $("#store-button").on("click", function () {
-      $("#popup").text("Du har trykket på knappen!").fadeIn(300).delay(1800).fadeOut(400);
-    });
-
-    // Aktiveret: Autoscale og centrering
-    document.documentElement.style.height = '100%';
-    document.body.style.height = '100%';
-    document.documentElement.style.overflow = 'hidden';
-    document.body.style.overflow = 'hidden';
-    function scaleContent() {
-      const content = document.getElementById('content');
-      const scale = Math.min(window.innerWidth / 800, window.innerHeight / 600);
-      content.style.transform = 'scale(' + scale + ')';
-      content.style.transformOrigin = 'center center';
-    }
-    window.addEventListener('resize', scaleContent);
-    window.addEventListener('load', scaleContent);
   </script>
-
 </body>
 </html>
