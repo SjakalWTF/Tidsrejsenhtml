@@ -111,11 +111,8 @@
   </footer>
 
   <!-- SCRIPTS -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
-          integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
-          crossorigin="anonymous"></script>
     <script>
+    // === KOPIER IP FUNKTION ===
     function copyIP() {
       const ip = "mc.tidsrejsen.net";
       const tempInput = document.createElement("input");
@@ -132,7 +129,7 @@
       }, 2000);
     }
 
-    // Aktiveret: Autoscale og centrering
+    // === AUTOSCALE & CENTERING ===
     document.documentElement.style.height = '100%';
     document.body.style.height = '100%';
     document.documentElement.style.overflow = 'hidden';
@@ -147,6 +144,26 @@
 
     window.addEventListener('resize', scaleContent);
     window.addEventListener('load', scaleContent);
+
+    // === ANTI-SCROLL ===
+    // Forhindrer al scrolling med mus, touch og keyboard
+    window.addEventListener('scroll', function () {
+      window.scrollTo(0, 0);
+    });
+
+    window.addEventListener('wheel', function (e) {
+      e.preventDefault();
+    }, { passive: false });
+
+    window.addEventListener('touchmove', function (e) {
+      e.preventDefault();
+    }, { passive: false });
+
+    // === POPUP VED BUTIK-KNAP ===
+    $("#store-button").on("click", function () {
+      $("#popup").text("Du har trykket på knappen!").fadeIn(300).delay(1800).fadeOut(400);
+    });
   </script>
+
 </body>
 </html>
