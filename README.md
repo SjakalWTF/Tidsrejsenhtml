@@ -21,19 +21,4 @@ Dette er en opdateret version af TidsRejsen hjemmesiden med følgende forbedring
 
 ### Forbedret JavaScript
 - Moderniseret clipboard funktionalitet
-- Tilføjet smooth scrolling
 - Flyttet JavaScript til separat fil for bedre vedligeholdelse
-
-## Filstruktur
-- `index.html` - Hovedsiden
-- `css/style.css` - Stylesheet
-- `js/main.js` - JavaScript funktionalitet
-- `img/` - Mappe til billeder (logo.png, background.jpg, etc.)
-
-## Installation på GitHub Pages
-1. Upload alle filer til dit GitHub repository
-2. Aktiver GitHub Pages i repository indstillingerne
-3. GitHub Pages vil automatisk håndtere HTTPS
-
-## Bemærk
-Husk at flytte dine eksisterende billeder (logo.png, background.jpg, etc.) til `img/` mappen.
